@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "memory_plotter"
+readme = "README.md"
+version = "0.1"
+dependencies = [
+    "matplotlib",
+    "psutil",
+    "typing_extensions",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ipykernel",
+    "pytest",
+    "mypy",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = ["C0114", "C0115", "C0116", "C0325", "W0718"]
+
+[tool.mypy]
+strict_optional = true
